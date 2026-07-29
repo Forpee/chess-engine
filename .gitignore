@@ -1,0 +1,5 @@
+/target
+/web/node_modules
+
+# src/web/dist is deliberately committed: it is the built UI that the Rust
+# binary embeds, so `cargo build` works without Node installed.

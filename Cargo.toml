@@ -1,0 +1,19 @@
+[package]
+name = "chess-engine"
+version = "0.1.0"
+edition = "2024"
+description = "A UCI chess engine with bitboard move generation and alpha-beta search"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+
+# Perft and search tests are far too slow in an unoptimised build.
+[profile.test]
+opt-level = 2
+
+[profile.dev]
+opt-level = 1
